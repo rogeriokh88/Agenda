@@ -7,6 +7,10 @@ pip install django
 django-admin startproject project .
 python manage.py startapp contact
 para consula os aquivo install no ambiente vitual 
+para atualiza o git com arquivo novo
+git add .
+git commit -m 'string'
+git push
 '''
 
 configurar o git
