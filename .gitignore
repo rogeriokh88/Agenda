@@ -51,6 +51,8 @@ target/
 # IPython
 profile_default/
 ipython_config.py
+static/
+media/
 
 # pyenv
 .python-version
