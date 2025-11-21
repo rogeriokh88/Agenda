@@ -1,6 +1,7 @@
 Iniciar o projeto Django
 
 '''
+pip install faker
 python -m venv venv
 .venv/scripts/activate
 pip install django 
