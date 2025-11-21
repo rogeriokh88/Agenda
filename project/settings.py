@@ -119,13 +119,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-    BASE_DIR / 'base_static',
+    BASE_DIR / 'base_static', #PASTA DE ARQUIVO STATIC DO PROJETO
 )
 STATIC_ROOT = BASE_DIR / 'static' #COLLECTSTATIC
 
-MEDIA_URL = 'media/'
+MEDIA_URL = 'media/' #URL DE ARQUIVO DE MIDIA 
 
-MEDIA_ROOT =BASE_DIR / 'media'
+MEDIA_ROOT =BASE_DIR / 'media' #PASTA DE ARQUIVOS DE MIDIA E RECONHECE PELO DJAGO
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
