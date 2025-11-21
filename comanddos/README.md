@@ -6,6 +6,7 @@ python -m venv venv
 pip install django 
 django-admin startproject project .
 python manage.py startapp contact
+pip install pillow para amazenar o aquivo imagem na pasta media.
 para consula os aquivo install no ambiente vitual 
 para atualiza o git com arquivo novo
 git add .
