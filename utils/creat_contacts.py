@@ -1,3 +1,4 @@
+"""Sccript para criar o dados de contatos no meu banco de dados."""
 import os
 import sys
 from datetime import datetime

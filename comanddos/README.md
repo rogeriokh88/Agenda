@@ -1,6 +1,7 @@
 Iniciar o projeto Django
 
 '''
+cria uma pasta settings para isolar arquivos importantes 
 pip install faker
 python -m venv venv
 .venv/scripts/activate
