@@ -60,3 +60,8 @@ contacts = Contact.objects.all().order_by('-id')
 # Retorna QuerySet[]
 contacts = Contact.objects.filter(**filters).order_by('-id')
 
+## atalho do vs code ##
+# para comenta Ctrl + k depois Ctrl + c
+# para identar Ctrl + ]
+# para diminuir Ctrl + [
+

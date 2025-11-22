@@ -2,17 +2,23 @@ from django.shortcuts import render , get_object_or_404, redirect
 #from django.http import Http404
 from django.db.models import Q
 from contact.models import Contact
+from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request): #view da pagina principal do app contact
     contacts = Contact.objects \
         .filter(show=True) \
-        .order_by('-id')[:10]
+        .order_by('-id')
+    
+    paginator = Paginator(contacts, 10)  
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
         #objects pega todos os contatos do banco de dados 
         #filter pega so os contatos que estao com show= true
         #order_by ordena os contatos pelo id de forma decrecente
     context = {
-        'contacts': contacts,
+        'page_obj': page_obj,
         'site_title': 'Contatos - '
     }
 
@@ -45,7 +51,7 @@ def contact(request, contact_id): #view da pagina principal do app contact
         )
 
 def search(request): #view da pagina principal do app contact
-    search_value = request.GET.get('q','').strip()
+    search_value = request.GET.get('q', '').strip()
     print(search_value)
 
     if search_value == '':
@@ -60,11 +66,16 @@ def search(request): #view da pagina principal do app contact
             Q(email__icontains=search_value)
             )\
         .order_by('-id')
+    
+    paginator = Paginator(contacts, 10)  
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
         #objects pega todos os contatos do banco de dados 
         #filter pega so os contatos que estao com show= true
         #order_by ordena os contatos pelo id de forma decrecente
     context = {
-        'contacts': contacts,
+        'page_obj': page_obj,
         'site_title': 'search - '
     }
 
