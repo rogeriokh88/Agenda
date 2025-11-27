@@ -1,18 +1,21 @@
-from django.shortcuts import render 
+from django.shortcuts import redirect, render 
 from contact.forms import ContactForm
-
-
 
 def create(request): #view da pagina principal do app contact
     if request.method == 'POST':
-         context = {
-        'form': ContactForm(request.POST),
+        form = ContactForm(request.POST)
+        context = {
+            'form': form,
         }
-         return render(
-                request,
-                'contact/create.html',
-                context,
-                )
+        if form.is_valid():
+            form.save()
+            return redirect('contact:create',)
+
+        return render(
+            request,
+            'contact/create.html',
+            context,
+            )
          
     context = {
         'form': ContactForm(),

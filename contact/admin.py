@@ -7,7 +7,7 @@ class ContactAdmin(admin.ModelAdmin):#configuraçoes do admin para a class conta
     list_display = ('id','first_name', 'last_name','phone','email','created_date','show',)#coluna a ser exibida na pagina do admin
     ordering = ('-id',)#ordenaçao
     #list_filter = 'created_date',
-    search_fields = 'id','first_name','last_name',#campo de pesquis 
+    search_fields = 'id','first_name','last_name',#campo de pesquisa para acessa o campos
     list_per_page = 10 #NUMERO DE ITENS POR PAGINA
     list_max_show_all = 200 #NUMERO MAXIMO DE ITENS QUE PODE SER EXIBIDO NA PAGINA DO ADMIN
     list_editable = 'first_name','last_name','show',

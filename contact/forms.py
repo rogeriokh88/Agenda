@@ -29,7 +29,11 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name',
             'last_name',
-            'phone',
+            'phone',  
+            'email',
+            'description',
+            'category',
+
             )
         # widgets = {
         #     'first_name': forms.TextInput(
@@ -46,12 +50,12 @@ class ContactForm(forms.ModelForm):
         last_name = cleaned_data.get('last_name')
 
         if first_name == last_name:
-             msg = ValidationError(
+            msg = ValidationError(
                  'primeiro nome não pode ser igual ao segundo',
                  code='invalid'
              )
-        self.add_error('first_name',msg)
-        self.add_error('last_name',msg)
+            self.add_error('first_name', msg)
+            self.add_error('last_name', msg)
         #     None,
         #     ValidationError(
         #         'Messagem de erro',
